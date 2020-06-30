@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'templates/style.css' %}">
+<div class="container">
+    {% for post in object_list %}
+    <div class="post">
+      <p>ニックネーム：{{ post.title }}</p>
+      <p>コメント：{{ post.memo }}</p>
+      <p>--------------------</p>
+    </div>
+    {% endfor %}
+    <div class="form">
+      <a href="{% url 'form' %}">新規投稿</a>
+    </div>
+  </div>
